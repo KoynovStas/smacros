@@ -88,4 +88,11 @@
 
 
 
+//The count of elements in the array.
+#define  COUNT_ELEMENTS(array) (sizeof(array) / sizeof(array[0]))
+
+
+
+
+
 #endif //SIMPLE_MACROS_HEADER
