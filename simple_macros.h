@@ -95,4 +95,23 @@
 
 
 
+// For GCC 4.6 or higher, in C++ you can use a standard right static_assert(exp, msg) in *.c and in *.h files.
+// For GCC 4.6 is required to add CFLAGS += -std="c++0x"
+// Simple C (gcc) have not static_assert.
+// A lot of variants, it is the most simple and intuitive
+// It can be used in *.c and in *.h files. (macros that use function style can be used in *.c files only)
+// This is not an array. It is the type of data !!!!
+// Disadvantages: you can not be set msg to display the console when compiling
+//
+// Example:
+//
+//  STATIC_ASSERT( sizeof(char) == 1)  //good job
+//  STATIC_ASSERT( sizeof(char) != 1)  //You will get a compilation error
+//
+#define STATIC_ASSERT(EXPR) typedef char static_assert_failed[(EXPR) ? 1 : -1] __attribute__((unused))
+
+
+
+
+
 #endif //SIMPLE_MACROS_HEADER
