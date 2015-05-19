@@ -2,6 +2,8 @@
 #define SIMPLE_MACROS_HEADER
 
 
+#include <stdint.h>
+
 
 
 
@@ -117,6 +119,16 @@
 // align must be a power of two.
 // Alignment takes place upwards.
 #define  ALIGNMENT(val, align)  ( ((val) + (align)) & ~( (align) - 1) )
+
+
+
+
+
+// Macros to convert the time in microseconds
+// t  have to have  struct timespec type
+// TIME_IN_USEC2 is fast variant (have not mul)
+#define  TIME_IN_USEC(t)     (uint32_t)(t.tv_usec + t.tv_sec * 1000000)
+#define  TIME_IN_USEC2(t)    (uint32_t)(t.tv_usec + (t.tv_sec << 20) )
 
 
 
