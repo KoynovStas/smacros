@@ -25,6 +25,6 @@ void run_tests(ptest_func *tests, size_t count_tests)
     }
 
 
-    printf("all test passed  count tests = %ld\n", count_tests);
+    printf("all test passed  count tests = %zu\n", count_tests);
 }
 
