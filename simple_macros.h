@@ -21,5 +21,12 @@
 
 
 
+#define  SET_FLAG(reg, flag)   (reg |=  (flag) )
+#define  CLR_FLAG(reg, flag)   (reg &= ~(flag) )
+#define  INV_FLAG(reg, flag)   (reg ^=  (flag) )
+
+
+
+
 
 #endif //SIMPLE_MACROS_HEADER
