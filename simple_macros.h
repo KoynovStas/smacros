@@ -15,4 +15,11 @@
 
 
 
+#define  SET_BIT(reg, num_bit)   (reg |=  (1 << num_bit) )
+#define  CLR_BIT(reg, num_bit)   (reg &= ~(1 << num_bit) )
+#define  INV_BIT(reg, num_bit)   (reg ^=  (1 << num_bit) )
+
+
+
+
 #endif //SIMPLE_MACROS_HEADER
