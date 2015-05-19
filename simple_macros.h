@@ -157,5 +157,19 @@
 
 
 
+#ifdef  DEBUG
+        #include <stdio.h>
+
+        #define  DEBUG_MSG(...)       printf(__VA_ARGS__)
+        #define  FDEBUG_MSG(fp, ...) fprintf(fp, __VA_ARGS__)
+#else
+        #define  DEBUG_MSG(...)       ({})
+        #define  FDEBUG_MSG(fp, ...)  ({})
+#endif
+
+
+
+
+
 
 #endif //SIMPLE_MACROS_HEADER
