@@ -134,4 +134,28 @@
 
 
 
+#define  FREE_AND_NULL(ptr_var)  ({                      \
+                                     if(ptr_var)         \
+                                     {                   \
+                                         free(ptr_var);  \
+                                         ptr_var = NULL; \
+                                     }                   \
+                                  })
+
+
+
+#define  DELETE_AND_NULL(ptr_var) ({                        \
+                                      if(ptr_var)           \
+                                      {                     \
+                                          delete (ptr_var); \
+                                          ptr_var = NULL;   \
+                                      }                     \
+                                  })
+
+
+
+
+
+
+
 #endif //SIMPLE_MACROS_HEADER
