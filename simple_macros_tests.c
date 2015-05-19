@@ -627,6 +627,42 @@ int test_INV_FLAG_5(struct test_info_t  *test_info)
 
 
 
+// -----------------  ALIGNMENT  -----------------
+int test_ALIGNMENT_1(struct test_info_t  *test_info)
+{
+
+    TEST_INIT;
+
+
+    if(ALIGNMENT(1, 2) != 2)
+        return TEST_BROKEN;
+
+
+    return TEST_PASSED;
+}
+
+
+
+int test_ALIGNMENT_2(struct test_info_t  *test_info)
+{
+
+    TEST_INIT;
+
+    int i;
+
+    for( i = 0; i < 4096; i++)
+    {
+
+        if(ALIGNMENT(i, 4096) != 4096)
+            return TEST_BROKEN;
+    }
+
+
+    return TEST_PASSED;
+}
+
+
+
 ptest_func tests[] =
 {
 
@@ -679,6 +715,11 @@ ptest_func tests[] =
     test_INV_FLAG_3,
     test_INV_FLAG_4,
     test_INV_FLAG_5,
+
+
+    //ALIGNMENT
+    test_ALIGNMENT_1,
+    test_ALIGNMENT_2,
 
 };
 

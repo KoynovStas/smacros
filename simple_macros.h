@@ -114,4 +114,12 @@
 
 
 
+// align must be a power of two.
+// Alignment takes place upwards.
+#define  ALIGNMENT(val, align)  ( ((val) + (align)) & ~( (align) - 1) )
+
+
+
+
+
 #endif //SIMPLE_MACROS_HEADER
