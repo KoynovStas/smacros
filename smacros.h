@@ -1,3 +1,17 @@
+/*
+ * smacros.h
+ *
+ *
+ * version 1.0
+ *
+ *
+ * Copyright (c) 2015, Koynov Stas - skojnov@yandex.ru
+ *
+ *
+ * more details see https://github.com/KoynovStas/smacros
+ *
+ */
+
 #ifndef SMACROS_HEADER
 #define SMACROS_HEADER
 
