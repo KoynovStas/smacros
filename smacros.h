@@ -1,5 +1,5 @@
-#ifndef SIMPLE_MACROS_HEADER
-#define SIMPLE_MACROS_HEADER
+#ifndef SMACROS_HEADER
+#define SMACROS_HEADER
 
 
 #include <stdint.h>
@@ -135,4 +135,4 @@
 
 
 
-#endif //SIMPLE_MACROS_HEADER
+#endif //SMACROS_HEADER

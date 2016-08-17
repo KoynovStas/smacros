@@ -6,12 +6,12 @@ GCC       =  gcc
 
 
 # list of tests for build
-TESTS  = simple_macros_tests
+TESTS  = smacros_tests
 
 
 
-SOURCES  = unit_tests.c           \
-           simple_macros_tests.c
+SOURCES  = unit_tests.c    \
+           smacros_tests.c
 
 
 
