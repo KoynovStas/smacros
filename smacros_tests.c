@@ -82,7 +82,7 @@ int test_SET_BIT_4(struct test_info_t  *test_info)
         reg = 0;
         SET_BIT(reg, i);
 
-        if( reg != (1 << i) )
+        if( reg != (1u << i) )
             return TEST_BROKEN;
     }
 
@@ -389,8 +389,7 @@ int test_SET_FLAG_4(struct test_info_t  *test_info)
 
     TEST_INIT;
 
-    uint32_t reg;
-    int i;
+    uint32_t reg, i;
 
 
     for(i = 0; i < 32; i++)
