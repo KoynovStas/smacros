@@ -104,22 +104,16 @@
 
 
 
-#define  DELETE_AND_NULL(ptr_var) ({                        \
-                                      if(ptr_var)           \
-                                      {                     \
-                                          delete (ptr_var); \
-                                          ptr_var = NULL;   \
-                                      }                     \
+#define  DELETE_AND_NULL(ptr_var) ({                    \
+                                      delete (ptr_var); \
+                                      ptr_var = NULL;   \
                                    })
 
 
 
-#define  DELETE_ARRAY_AND_NULL(ptr_var) ({                           \
-                                            if(ptr_var)              \
-                                            {                        \
-                                                delete [] (ptr_var); \
-                                                ptr_var = NULL;      \
-                                            }                        \
+#define  DELETE_ARRAY_AND_NULL(ptr_var) ({                       \
+                                            delete [] (ptr_var); \
+                                            ptr_var = NULL;      \
                                         })
 
 
