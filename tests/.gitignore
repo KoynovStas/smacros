@@ -24,6 +24,7 @@
 
 
 # Binary files
+*.exe
 smacros_tests
 
 
