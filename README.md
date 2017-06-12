@@ -5,7 +5,6 @@
 This is my set of simple macros that I use in my projects.
 
 
-<br/>
 ## Usage
 
 You need to include **smacros.h** file in your **.c** file.
@@ -17,8 +16,6 @@ You need to include **smacros.h** file in your **.c** file.
 ```
 
 
-***
-<br/>
 ## License
 
-[BSD](./LICENSE).
+[BSD-3-Clause](./LICENSE).
