@@ -3,321 +3,242 @@
 #include <stdint.h>
 
 
-
-#include "unit_tests.h"
+#include "stest.h"
 #include "smacros.h"
 
 
 
 
+
 // -----------------  SET_BIT  -----------------
-int test_SET_BIT_1(struct test_info_t  *test_info)
+TEST(test_SET_BIT_1)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 0;
-
 
     SET_BIT(reg, 0);
 
-    if(reg != 1)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 1);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_SET_BIT_2(struct test_info_t  *test_info)
+TEST(test_SET_BIT_2)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 1;
 
-
     SET_BIT(reg, 0);
 
-    if(reg != 1)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 1);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_SET_BIT_3(struct test_info_t  *test_info)
+TEST(test_SET_BIT_3)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 0;
-
 
     SET_BIT(reg, 1);
 
-    if(reg != 2)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 2);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_SET_BIT_4(struct test_info_t  *test_info)
+TEST(test_SET_BIT_4)
 {
-
-    TEST_INIT;
-
     uint32_t reg;
     int i;
-
 
     for(i = 0; i < 32; i++)
     {
         reg = 0;
         SET_BIT(reg, i);
 
-        if( reg != (1u << i) )
-            return TEST_BROKEN;
+        TEST_ASSERT( reg == (1u << i) );
     }
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_SET_BIT_5(struct test_info_t  *test_info)
+TEST(test_SET_BIT_5)
 {
-
-    TEST_INIT;
-
     uint32_t reg = 0xFFFFFFFF;
     int i;
 
-
     for(i = 0; i < 32; i++)
     {
-
         SET_BIT(reg, i);
 
-        if( reg != 0xFFFFFFFF )
-            return TEST_BROKEN;
+        TEST_ASSERT( reg == 0xFFFFFFFF );
     }
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
 // -----------------  CLR_BIT  -----------------
-int test_CLR_BIT_1(struct test_info_t  *test_info)
+TEST(test_CLR_BIT_1)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 0;
-
 
     CLR_BIT(reg, 0);
 
-    if(reg != 0)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 0);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_CLR_BIT_2(struct test_info_t  *test_info)
+TEST(test_CLR_BIT_2)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 1;
 
-
     CLR_BIT(reg, 0);
 
-    if(reg != 0)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 0);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_CLR_BIT_3(struct test_info_t  *test_info)
+TEST(test_CLR_BIT_3)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 0;
-
 
     CLR_BIT(reg, 1);
 
-    if(reg != 0)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 0);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_CLR_BIT_4(struct test_info_t  *test_info)
+TEST(test_CLR_BIT_4)
 {
-
-    TEST_INIT;
-
     uint32_t reg = 0;
     int i;
 
-
     for(i = 0; i < 32; i++)
     {
-
         CLR_BIT(reg, i);
 
-        if( reg != 0 )
-            return TEST_BROKEN;
+        TEST_ASSERT( reg == 0 );
     }
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_CLR_BIT_5(struct test_info_t  *test_info)
+TEST(test_CLR_BIT_5)
 {
-
-    TEST_INIT;
-
     uint32_t reg = 0xFFFFFFFF;
     int i;
-
 
     for(i = 0; i < 32; i++)
         CLR_BIT(reg, i);
 
 
-    if( reg != 0 )
-        return TEST_BROKEN;
+    TEST_ASSERT( reg == 0 );
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
 // -----------------  INV_BIT  -----------------
-int test_INV_BIT_1(struct test_info_t  *test_info)
+TEST(test_INV_BIT_1)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 0;
 
-
     INV_BIT(reg, 0);
 
-    if(reg != 1)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 1);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_INV_BIT_2(struct test_info_t  *test_info)
+TEST(test_INV_BIT_2)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 1;
 
-
     INV_BIT(reg, 0);
 
-    if(reg != 0)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 0);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_INV_BIT_3(struct test_info_t  *test_info)
+TEST(test_INV_BIT_3)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 2;
-
 
     INV_BIT(reg, 1);
 
-    if(reg != 0)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 0);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_INV_BIT_4(struct test_info_t  *test_info)
+TEST(test_INV_BIT_4)
 {
-
-    TEST_INIT;
-
     uint32_t reg = 0;
     int i;
 
-
     for(i = 0; i < 32; i++)
         INV_BIT(reg, i);
 
-
-    if( reg != 0xFFFFFFFF )
-        return TEST_BROKEN;
+    TEST_ASSERT( reg == 0xFFFFFFFF );
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_INV_BIT_5(struct test_info_t  *test_info)
+TEST(test_INV_BIT_5)
 {
-
-    TEST_INIT;
-
     uint32_t reg = 0xFFFFFFFF;
     int i;
-
 
     for(i = 0; i < 32; i++)
         INV_BIT(reg, i);
 
-
-    if( reg != 0 )
-        return TEST_BROKEN;
+    TEST_ASSERT( reg == 0 );
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
@@ -327,337 +248,247 @@ int test_INV_BIT_5(struct test_info_t  *test_info)
 
 
 // -----------------  SET_FLAG  -----------------
-int test_SET_FLAG_1(struct test_info_t  *test_info)
+TEST(test_SET_FLAG_1)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 0;
-
 
     SET_FLAG(reg, 0);
 
-    if(reg != 0)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 0);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_SET_FLAG_2(struct test_info_t  *test_info)
+TEST(test_SET_FLAG_2)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 1;
 
-
     SET_FLAG(reg, 0);
 
-    if(reg != 1)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 1);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_SET_FLAG_3(struct test_info_t  *test_info)
+TEST(test_SET_FLAG_3)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 0;
-
 
     SET_FLAG(reg, 1);
 
-    if(reg != 1)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 1);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_SET_FLAG_4(struct test_info_t  *test_info)
+TEST(test_SET_FLAG_4)
 {
-
-    TEST_INIT;
-
     uint32_t reg, i;
-
 
     for(i = 0; i < 32; i++)
     {
         reg = 0;
         SET_FLAG(reg, i);
 
-        if( reg != i )
-            return TEST_BROKEN;
+        TEST_ASSERT( reg == i );
     }
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_SET_FLAG_5(struct test_info_t  *test_info)
+TEST(test_SET_FLAG_5)
 {
-
-    TEST_INIT;
-
     uint32_t reg = 0xFFFFFFFF;
     int i;
 
-
     for(i = 0; i < 32; i++)
     {
-
         SET_FLAG(reg, i);
 
-        if( reg != 0xFFFFFFFF )
-            return TEST_BROKEN;
+        TEST_ASSERT( reg == 0xFFFFFFFF );
     }
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
 // -----------------  CLR_FLAG  -----------------
-int test_CLR_FLAG_1(struct test_info_t  *test_info)
+TEST(test_CLR_FLAG_1)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 0;
-
 
     CLR_FLAG(reg, 0);
 
-    if(reg != 0)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 0);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_CLR_FLAG_2(struct test_info_t  *test_info)
+TEST(test_CLR_FLAG_2)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 1;
 
-
     CLR_FLAG(reg, 0);
 
-    if(reg != 1)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 1);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_CLR_FLAG_3(struct test_info_t  *test_info)
+TEST(test_CLR_FLAG_3)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 0;
-
 
     CLR_FLAG(reg, 1);
 
-    if(reg != 0)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 0);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_CLR_FLAG_4(struct test_info_t  *test_info)
+TEST(test_CLR_FLAG_4)
 {
-
-    TEST_INIT;
-
     uint32_t reg = 0xAA55AA55;
 
-
     CLR_FLAG(reg, 0xAA55AA55);
 
-    if( reg != 0 )
-        return TEST_BROKEN;
+    TEST_ASSERT( reg == 0 );
 
 
-
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_CLR_FLAG_5(struct test_info_t  *test_info)
+TEST(test_CLR_FLAG_5)
 {
-
-    TEST_INIT;
-
     uint32_t reg = 0xFFFFFFFF;
-
 
     CLR_FLAG(reg, 0xAA55AA55);
 
-    if( reg != 0x55AA55AA )
-        return TEST_BROKEN;
+    TEST_ASSERT( reg == 0x55AA55AA );
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
 // -----------------  INV_FLAG  -----------------
-int test_INV_FLAG_1(struct test_info_t  *test_info)
+TEST(test_INV_FLAG_1)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 0;
 
-
     INV_FLAG(reg, 0);
 
-    if(reg != 0)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 0);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_INV_FLAG_2(struct test_info_t  *test_info)
+TEST(test_INV_FLAG_2)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 1;
 
-
     INV_FLAG(reg, 0);
 
-    if(reg != 1)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 1);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_INV_FLAG_3(struct test_info_t  *test_info)
+TEST(test_INV_FLAG_3)
 {
-
-    TEST_INIT;
-
     unsigned int reg = 2;
-
 
     INV_FLAG(reg, 1);
 
-    if(reg != 3)
-        return TEST_BROKEN;
+    TEST_ASSERT(reg == 3);
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_INV_FLAG_4(struct test_info_t  *test_info)
+TEST(test_INV_FLAG_4)
 {
-
-    TEST_INIT;
-
     uint32_t reg = 0;
-
 
     INV_FLAG(reg, 0xAA55AA55);
 
-
-    if( reg != 0xAA55AA55 )
-        return TEST_BROKEN;
+    TEST_ASSERT( reg == 0xAA55AA55 );
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_INV_FLAG_5(struct test_info_t  *test_info)
+TEST(test_INV_FLAG_5)
 {
-
-    TEST_INIT;
-
     uint32_t reg = 0xFFFFFFFF;
-
 
     INV_FLAG(reg, 0xAA55AAFF);
 
-
-    if( reg != 0x55AA5500 )
-        return TEST_BROKEN;
+    TEST_ASSERT( reg == 0x55AA5500 );
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
 // -----------------  ALIGNMENT  -----------------
-int test_ALIGNMENT_1(struct test_info_t  *test_info)
+TEST(test_ALIGNMENT_1)
 {
+    TEST_ASSERT(ALIGNMENT(1, 2) == 2);
 
-    TEST_INIT;
-
-
-    if(ALIGNMENT(1, 2) != 2)
-        return TEST_BROKEN;
-
-
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
 
-int test_ALIGNMENT_2(struct test_info_t  *test_info)
+TEST(test_ALIGNMENT_2)
 {
-
-    TEST_INIT;
-
     int i;
 
     for( i = 0; i < 4096; i++)
     {
-
-        if(ALIGNMENT(i, 4096) != 4096)
-            return TEST_BROKEN;
+        TEST_ASSERT(ALIGNMENT(i, 4096) == 4096);
     }
 
 
-    return TEST_PASSED;
+    TEST_PASS(NULL);
 }
 
 
@@ -724,11 +555,4 @@ ptest_func tests[] =
 
 
 
-int main(void)
-{
-
-    RUN_TESTS(tests);
-
-    return 0;
-}
-
+MAIN_TESTS(tests)
