@@ -61,10 +61,9 @@
 
 
 
-#define  SET_BIT(reg, num_bit)   (reg |=  (1 << num_bit) )
-#define  CLR_BIT(reg, num_bit)   (reg &= ~(1 << num_bit) )
-#define  INV_BIT(reg, num_bit)   (reg ^=  (1 << num_bit) )
-
+#define  SET_BIT(reg, num_bit)   (reg |=  (1 << (num_bit)) )
+#define  CLR_BIT(reg, num_bit)   (reg &= ~(1 << (num_bit)) )
+#define  INV_BIT(reg, num_bit)   (reg ^=  (1 << (num_bit)) )
 
 
 #define  SET_FLAG(reg, flag)   (reg |=  (flag) )
@@ -84,7 +83,7 @@
 /*
  * For GCC 4.6 or higher, in C++ you can use a standard right static_assert(exp, msg) in *.c and in *.h files.
  * For GCC 4.6 is required to add CFLAGS += -std="c++0x"
- * Simple C (gcc) have not static_assert.
+ * Simple C (gcc) have static_assert in std=c11.
  * A lot of variants, it is the most simple and intuitive
  * It can be used in *.c and in *.h files. (macros that use function style can be used in *.c files only)
  *
@@ -122,12 +121,9 @@
 
 
 
-#define  FREE_AND_NULL(ptr_var)  ({                      \
-                                     if(ptr_var)         \
-                                     {                   \
-                                         free(ptr_var);  \
-                                         ptr_var = NULL; \
-                                     }                   \
+#define  FREE_AND_NULL(ptr_var)  ({                  \
+                                     free(ptr_var);  \
+                                     ptr_var = NULL; \
                                   })
 
 
