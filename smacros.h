@@ -103,6 +103,13 @@
 
 
 
+#define DEF_TO_STR_(text) #text
+#define DEF_TO_STR(arg) DEF_TO_STR_(arg)
+
+
+
+
+
 // align must be a power of two.
 // Alignment takes place upwards.
 #define  ALIGNMENT(val, align)  ( ((val) + (align)) & ~( (align) - 1) )
