@@ -163,6 +163,8 @@
 
 
 
+#define UNUSED(var) (void)var
+
 
 
 // container_of - cast a member of a structure out to the containing structure
