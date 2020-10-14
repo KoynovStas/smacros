@@ -2,7 +2,7 @@ CFLAGS   += -O2  -s  -Wall
 CFLAGS   += -D__USE_MINGW_ANSI_STDIO=1  #-DWITHOUT_CONSOLE_COLOR
 CFLAGS   += -I..
 
-GCC       =  gcc
+CC       ?= gcc
 
 
 
@@ -30,7 +30,7 @@ clean:
 
 .PHONY: $(TESTS)
 $(TESTS):
-	$(GCC)  $@.c -o $@  $(CFLAGS)
+	$(CC)  $@.c -o $@  $(CFLAGS)
 	@echo "  ---- Compiled $@ ----"
 	@./$@
 
