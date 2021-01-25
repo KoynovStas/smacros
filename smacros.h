@@ -97,7 +97,8 @@
 #define ASSERT_CONCAT_(a, b) a##b
 #define ASSERT_CONCAT(a, b) ASSERT_CONCAT_(a, b)
 #define STATIC_ASSERT(expr) \
-    enum { ASSERT_CONCAT(assert_line_, __LINE__) = 1/(int)(!!(expr)) }
+    enum {ASSERT_CONCAT(ASSERT_CONCAT(level_, __INCLUDE_LEVEL__), \
+          ASSERT_CONCAT(_static_assert_on_line_, __LINE__)) = 1/(int)(!!(expr)) }
 
 
 
