@@ -493,9 +493,8 @@ TEST(test_ALIGNMENT_2)
 
 
 
-ptest_func tests[] =
+stest_func tests[] =
 {
-
     //SET_BIT
     test_SET_BIT_1,
     test_SET_BIT_2,
@@ -550,7 +549,6 @@ ptest_func tests[] =
     //ALIGNMENT
     test_ALIGNMENT_1,
     test_ALIGNMENT_2,
-
 };
 
 
