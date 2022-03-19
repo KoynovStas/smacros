@@ -81,11 +81,10 @@
 
 
 /*
- * For GCC 4.6 or higher, in C++ you can use a standard right static_assert(exp, msg) in *.c and in *.h files.
- * For GCC 4.6 is required to add CFLAGS += -std="c++0x"
- * Simple C (gcc) have static_assert in std=c11.
- * A lot of variants, it is the most simple and intuitive
- * It can be used in *.c and in *.h files. (macros that use function style can be used in *.c files only)
+ * Since C/C++ 11 you can use a standard static_assert(exp, msg)
+ * For old C/C++ a lot of variants, this is the most simple and intuitive
+ * It can be used in *.c and in *.h files.
+ * (macros that use function style can be used in *.c files only)
  *
  * Disadvantages: you can not be set msg to display the console when compiling
  *
