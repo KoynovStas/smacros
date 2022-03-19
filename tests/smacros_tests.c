@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <stdint.h>
-
 
 #include "stest.h"
 #include "smacros.h"
@@ -16,9 +13,10 @@ TEST(test_SET_BIT_1)
     unsigned int reg = 0;
 
     SET_BIT(reg, 0);
-
     TEST_ASSERT(reg == 1);
 
+    SET_BIT(reg, 0);
+    TEST_ASSERT(reg == 1);
 
     TEST_PASS(NULL);
 }
@@ -27,12 +25,16 @@ TEST(test_SET_BIT_1)
 
 TEST(test_SET_BIT_2)
 {
-    unsigned int reg = 1;
+    unsigned int reg = 2;
 
     SET_BIT(reg, 0);
+    TEST_ASSERT(reg == 3);
 
-    TEST_ASSERT(reg == 1);
+    SET_BIT(reg, 0);
+    TEST_ASSERT(reg == 3);
 
+    SET_BIT(reg, 1);
+    TEST_ASSERT(reg == 3);
 
     TEST_PASS(NULL);
 }
@@ -44,9 +46,13 @@ TEST(test_SET_BIT_3)
     unsigned int reg = 0;
 
     SET_BIT(reg, 1);
-
     TEST_ASSERT(reg == 2);
 
+    SET_BIT(reg, 1);
+    TEST_ASSERT(reg == 2);
+
+    SET_BIT(reg, 0);
+    TEST_ASSERT(reg == 3);
 
     TEST_PASS(NULL);
 }
@@ -188,9 +194,10 @@ TEST(test_INV_BIT_2)
     unsigned int reg = 1;
 
     INV_BIT(reg, 0);
-
     TEST_ASSERT(reg == 0);
 
+    INV_BIT(reg, 0);
+    TEST_ASSERT(reg == 1);
 
     TEST_PASS(NULL);
 }
@@ -202,9 +209,10 @@ TEST(test_INV_BIT_3)
     unsigned int reg = 2;
 
     INV_BIT(reg, 1);
-
     TEST_ASSERT(reg == 0);
 
+    INV_BIT(reg, 1);
+    TEST_ASSERT(reg == 2);
 
     TEST_PASS(NULL);
 }
