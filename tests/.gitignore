@@ -33,15 +33,5 @@ smacros_tests
 *.*~
 
 
-
-# Configs for QT_Creator (I use QT_Creator as IDE)
-*.config
-*.creator
-*.creator.user
-*.files
-*.includes
-
-
-
 # Files that we don't want to ignore
 !.gitignore
