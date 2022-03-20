@@ -1,4 +1,4 @@
-CFLAGS   += -O2  -s  -Wall
+CFLAGS   += -O2 -s -Wall -Wextra -pedantic
 CFLAGS   += -D__USE_MINGW_ANSI_STDIO=1  #-DWITHOUT_CONSOLE_COLOR
 CFLAGS   += -I..
 
