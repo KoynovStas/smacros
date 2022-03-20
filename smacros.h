@@ -2,7 +2,7 @@
  * smacros.h
  *
  *
- * version 1.1
+ * version 1.2
  *
  *
  * BSD 3-Clause License
